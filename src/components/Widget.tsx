@@ -1,11 +1,11 @@
 import React from 'react';
-import ThreeButton from '../containers/ThreeButton';
-import CheckBoxBlock from '../containers/CheckBoxBlock';
+import ButtonBlock from './ButtonsBlock';
+import CheckBoxBlock from './CheckBoxBlock';
 
 const Widget = () => (
     <div>
-        <ThreeButton/>
-        <h4>Количество пересадок</h4>
+        <ButtonBlock/>
+        <h5 className= "pt-1 pb-1">Количество пересадок</h5>
         <CheckBoxBlock/>
     </div>
 );

@@ -1,44 +1,46 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {sayHello} from '../actions';
+import {setCurrency} from '../actions';
 import databaseRef from '../firebase'
 
 export interface ButtonProps {
-    whatsUp: string; stateObject: object; saySomething: Function;
+    currency: string;
+    onClick: Function; 
+    currencyTitle: string;
 }
 
 const Button = (props: ButtonProps) =>
     (
-        <div >
-            <button onClick={()=>props.saySomething()}>
-        PRESS TO DISPATCH FIRST ACTION
-            </button>
-            <button className='btn-primary'>fffff</button>
-            <h2>{props.whatsUp}   </h2>
-            <button onClick = {() => console.log('Redux State:', props.stateObject)} >
-        Press to inspect STATE in console panel
-            </button>
-        </div>
-
+        <button 
+            className={ props.currencyTitle === props.currency ? 'btn btn-primary' : 'btn btn-outline-secondary'} 
+            onClick={()=>{props.onClick();}}
+            style={{boxShadow: 'unset'}}>
+            {props.currencyTitle}
+        </button>
+  
     );
 
-interface StateObject { say: string}
+interface OwnProposObject { currencyTitle: string};
+interface StateObject{ currency: string }
 
-const mapStateToProps = (state: StateObject) => ({
-    whatsUp: state.say,
-    stateObject: state,
-});
+const mapStateToProps = (state: StateObject) => ({ currency: state.currency});
+const mapDispatchToProps = (dispatch: Function, ownProps: OwnProposObject) => ({
+    onClick: () => {
+        dispatch(setCurrency(ownProps.currencyTitle));
+    }
+})
+  
 
-const mapDispatchToProps = (dispatch: Function) => ({
-    saySomething: () => {
-        dispatch(sayHello());
-        databaseRef.child("TT").on("value", function(snapshot: any) {
-            console.log(snapshot.val());
-        }, function (error: any) {
-            console.log("Error: " + error.code);
-        });
-    },
-});
+// const mapDispatchToProps = (dispatch: Function) => ({
+//     saySomething: () => {
+//         dispatch(sayHello());
+//         databaseRef.child("TT").on("value", function(snapshot: any) {
+//             console.log(snapshot.val());
+//         }, function (error: any) {
+//             console.log("Error: " + error.code);
+//         });
+//     },
+// });
 
 export default connect(
     mapStateToProps,

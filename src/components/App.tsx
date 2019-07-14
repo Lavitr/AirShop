@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '../containers/Button';
 import Logo from './Logo';
 import FlightItem from '../containers/FlightItem';
 import Widget from './Widget';
@@ -25,7 +24,6 @@ const App = () => (
                     <FlightItem/>
                     col-sm-8</div>
             </div>
-            <Button />
         
         </div>
     </div>
