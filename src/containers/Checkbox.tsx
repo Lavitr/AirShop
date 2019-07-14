@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {setTranfersNumber ,unsetTranfersNumber} from '../actions';
 
 export interface CheckProps {
-    transfersNumber: number | object;
+    transfersNumber: number;
     transfersNumberArray: any [];
     title: string;
     handleInputChange: Function;
@@ -12,7 +12,7 @@ export interface CheckProps {
 
 const Checkbox = (props: CheckProps) =>
     (
-        <div className="form-checkß mt-2" >
+        <div className="form-check mt-2" >
             <input 
                 className="form-check-input" 
                 type="checkbox" 
@@ -31,18 +31,15 @@ const Checkbox = (props: CheckProps) =>
   
     );
 
-// interface OwnProposObject { 
-//     transfersNumber: number | object;
-//     title: string;
-// };
 interface StateObject{ transferNumberArray: any[] }
 
 const mapStateToProps = (state: StateObject) => ({ transfersNumberArray: state.transferNumberArray});
+
 const mapDispatchToProps = (dispatch: Function) => ({
-    handleInputChange: (transfers: number | object) => {
+    handleInputChange: (transfers: number ) => {
         dispatch(setTranfersNumber(transfers));
     },
-    handleUncheck: (transfers: number | object) => {
+    handleUncheck: (transfers: number ) => {
         dispatch(unsetTranfersNumber(transfers));
     }
 })

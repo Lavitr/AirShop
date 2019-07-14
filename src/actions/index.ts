@@ -12,12 +12,17 @@ export const setCurrency = (currency: string) => ({
     currency
 });
 
-export const setTranfersNumber = (transfersNumber: number | object) => ({
+export const setTranfersNumber = (transfersNumber: number) => ({
     type: 'SET_TRANSFERS_NUMBER',
     transfersNumber
 });
 
-export const unsetTranfersNumber = (transfersNumber: number | object) => ({
+export const unsetTranfersNumber = (transfersNumber: number) => ({
     type: 'UNSET_TRANSFERS_NUMBER',
     transfersNumber
+});
+
+export const setDestination = (destination: string) => ({
+    type: 'SET_DESTINATION',
+    destination
 });

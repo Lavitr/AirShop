@@ -8,10 +8,10 @@ const App = () => (
         <Logo />
         <div className="container container-style" >
             <div className="row">
-                <div className="col-sm-3 text-center " style={{backgroundColor:'azure',height:'fit-content'}}>
+                <div className="col-md-3 text-center p-3" style={{backgroundColor:'azure',height:'fit-content'}}>
                     <Widget/>
                 </div>
-                <div className="col-sm-9" style={{backgroundColor:'',minHeight: '100vh'}}>
+                <div className="col-md-9" style={{backgroundColor:'',minHeight: '100vh'}}>
                     <FlightItem/>
                     <FlightItem/>
                     <FlightItem/>

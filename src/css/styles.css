@@ -24,3 +24,8 @@ body{
   div.form-check{
       text-align: left;
   }
+  .dropdown{
+    height: 32px;
+    background-color: bisque;
+    border: 1px solid cornflowerblue;
+  }

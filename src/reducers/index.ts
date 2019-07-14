@@ -3,6 +3,7 @@ interface ActionObject {
     type: string;
     currency: string;
     transfersNumber: any;
+    destination: string;
 }
 const reducer = (state: any = {currency:'RUB',transferNumberArray:[]}, action: ActionObject) => {
     console.log('state',state)
@@ -23,6 +24,8 @@ const reducer = (state: any = {currency:'RUB',transferNumberArray:[]}, action: A
             return { ...state,
                 transferNumberArray: transfersArray.filter((i: any)=>i!==action.transfersNumber)
             };
+        case 'SET_DESTINATION':
+            return { ...state,destination:action.destination };
         default:
             return state;
     }
