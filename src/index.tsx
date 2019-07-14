@@ -3,6 +3,7 @@ import {render} from 'react-dom';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import reducer from './reducers';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import App from './components/App';
 

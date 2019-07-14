@@ -2,5 +2,25 @@
     box-sizing: border-box;
 }
 body{
-    background-color: beige;
+
 }
+.container-style{
+    background-color: aquamarine;
+    
+}
+.item-style{
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px  rgb(232, 235, 232);
+}
+.item-style:hover{
+    animation-name: example;
+  animation-duration: 1s;
+}
+
+@keyframes example {
+    from { box-shadow: 10px 10px 5px  rgb(232, 235, 232);}
+    to { box-shadow: 10px 10px 5px  rgb(38, 41, 38)}
+  }
+  div.form-check{
+      text-align: left;
+  }
