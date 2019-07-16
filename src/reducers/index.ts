@@ -19,9 +19,9 @@ const reducer = (state: any = {currency:'RUB',transferNumberArray:[]}, action: A
         case 'SET_TRANSFERS_NUMBER':
             
             return { ...state,
-                transferNumberArray: action.transfersNumber === null ?  
-                    [] :
-                    [...transfersArray, action.transfersNumber]
+                transferNumberArray: action.transfersNumber === -1 ?  
+                    [-1] :
+                    [...transfersArray, action.transfersNumber].filter(i=>i!==-1)
             };
         case 'UNSET_TRANSFERS_NUMBER':
             return { ...state,

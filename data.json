@@ -1,0 +1,21 @@
+{
+   "London": [
+       {"company":"Wizair","price": "200","transf_number":"0","dept_date":"13.01.2019","dept_time":"13-30","arr_date":"13.01.2019","arr_time":"17-00"},
+       {"company":"Wizair","price": "200","transf_number":"1","dept_date":"13.01.2019","dept_time":"13-30","arr_date":"13.01.2019","arr_time":"17-00"},
+       {"company":"Wizair","price": "200","transf_number":"2","dept_date":"13.01.2019","dept_time":"13-30","arr_date":"13.01.2019","arr_time":"17-00"},
+       {"company":"Wizair","price": "200","transf_number":"3","dept_date":"13.01.2019","dept_time":"13-30","arr_date":"13.01.2019","arr_time":"17-00"}
+   ],
+   "Minsk": [
+    {"company":"BelAvia","price": "200","transf_number":"0","dept_date":"13.01.2019","dept_time":"13-30","arr_date":"13.01.2019","arr_time":"17-00"},
+    {"company":"BelAvia","price": "200","transf_number":"1","dept_date":"13.01.2019","dept_time":"13-30","arr_date":"13.01.2019","arr_time":"17-00"},
+    {"company":"BelAvia","price": "200","transf_number":"2","dept_date":"13.01.2019","dept_time":"13-30","arr_date":"13.01.2019","arr_time":"17-00"},
+    {"company":"BelAvia","price": "200","transf_number":"3","dept_date":"13.01.2019","dept_time":"13-30","arr_date":"13.01.2019","arr_time":"17-00"}
+],
+   "Moskva": [
+    {"company":"Airflot","price": "200","transf_number":"0","dept_date":"13.01.2019","dept_time":"13-30","arr_date":"13.01.2019","arr_time":"17-00"},
+    {"company":"Airflot","price": "200","transf_number":"1","dept_date":"13.01.2019","dept_time":"13-30","arr_date":"13.01.2019","arr_time":"17-00"},
+    {"company":"Airflot","price": "200","transf_number":"2","dept_date":"13.01.2019","dept_time":"13-30","arr_date":"13.01.2019","arr_time":"17-00"},
+    {"company":"Airflot","price": "200","transf_number":"3","dept_date":"13.01.2019","dept_time":"13-30","arr_date":"13.01.2019","arr_time":"17-00"},
+    {"company":"Airflot","price": "200","transf_number":"4","dept_date":"13.01.2019","dept_time":"13-30","arr_date":"13.01.2019","arr_time":"17-00"}
+]
+}
