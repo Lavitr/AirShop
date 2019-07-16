@@ -10,7 +10,9 @@ const Dropdown = (props: DropdownProps) => (
     <select 
         defaultValue={'DEFAULT'}
         className="dropdown m-1 mb-3"
-        onChange={(e) => props.handleDropdownChange( e.target.value )}>
+        onChange={(e) => {
+            props.handleDropdownChange( e.target.value )
+        }}>
         <option value="DEFAULT" hidden>Select Destination</option>
         <option value="Minsk">Minsk</option>
         <option value="Vitebsk">Vitebsk</option>

@@ -4,13 +4,16 @@ interface ActionObject {
     currency: string;
     transfersNumber: any;
     destination: string;
+    flights: object;
 }
 const reducer = (state: any = {currency:'RUB',transferNumberArray:[]}, action: ActionObject) => {
     console.log('state',state)
     const transfersArray=state.transferNumberArray
     switch (action.type) {
-        case 'HELLO_REACT':
-            return {...state, say: 'Hello World Redux'};
+        case 'GET_FLIGHTS':
+            return { ...state, loading: true };
+        case 'FLIGHTS_RECEIVED':
+            return { ...state, flights: action.flights, loading: false }
         case 'SELECT_CURRENCY':
             return { ...state, currency: action.currency };
         case 'SET_TRANSFERS_NUMBER':
@@ -25,7 +28,7 @@ const reducer = (state: any = {currency:'RUB',transferNumberArray:[]}, action: A
                 transferNumberArray: transfersArray.filter((i: any)=>i!==action.transfersNumber)
             };
         case 'SET_DESTINATION':
-            return { ...state,destination:action.destination };
+            return { ...state,destination:action.destination, loading: true };
         default:
             return state;
     }

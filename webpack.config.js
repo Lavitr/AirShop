@@ -18,7 +18,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.svg$/,
+                test: /\.(jpe?g|png|gif|svg)$/i,
                 include: [path.join(__dirname, "src/assets")],
                 loader: "file-loader"
             },
