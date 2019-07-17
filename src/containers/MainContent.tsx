@@ -2,13 +2,15 @@ import React from 'react';
 import {connect} from 'react-redux';
 import FlightItem from './FlightItem';
 import Loading from '../components/Loading';
+import {buyTicket} from '../actions';
 
 interface PropsObject {
     loading: boolean;
     flights: object [];
     maxTransf: number[];
+    onClick: Function;
 }
-interface FlightObject{
+interface FlightObject{     
     company: string;
     price: string;
     transf_number: string;
@@ -23,13 +25,13 @@ const MainContent = (props: PropsObject) => ( props.loading ?
     (<div className="col-md-9" >
         { props.flights &&
       props.flights.map((flight: FlightObject, index: number) =>{
-          console.log('oo',props.maxTransf )
           if(props.maxTransf.includes(Number(flight.transf_number))
               || !props.maxTransf.length 
               || props.maxTransf[0] < 0 ){
               return (<
                   FlightItem
                   key={index}
+                  isBucket={false}
                   company={flight.company}
                   price={flight.price}
                   transf_number={flight.transf_number}
@@ -37,6 +39,7 @@ const MainContent = (props: PropsObject) => ( props.loading ?
                   dept_time={flight.dept_time}
                   arr_date={flight.arr_date}
                   arr_time={flight.arr_time}
+                  onClick= {()=>{console.log('ff',flight);props.onClick(flight)}}
               />)
           }
       })
@@ -52,8 +55,14 @@ const mapStateToProps = (state: StateObject) => ({
     maxTransf: state.transferNumberArray
 });
 
+const mapDispatchToProps = (dispatch: Function) => ({
+    onClick: (ticket: object) => {
+        dispatch(buyTicket(ticket));
+    }
+})
+
 export default connect(
     mapStateToProps,
-    null
+    mapDispatchToProps
 )(MainContent);
 

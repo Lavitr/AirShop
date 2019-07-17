@@ -25,4 +25,14 @@ export const unsetTranfersNumber = (transfersNumber: number) => ({
 export const setDestination = (destination: string) => ({
     type: 'SET_DESTINATION',
     destination
+})
+
+export const buyTicket = (ticket: object) => ({
+    type: 'BUY_TICKET',
+    ticket
+});
+
+export const removeTicket = (ticket: object) => ({
+    type: 'REMOVE_TICKET',
+    ticket
 });
