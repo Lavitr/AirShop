@@ -1,4 +1,21 @@
 import React from 'react';
+import Aeroflot from '../assets/Aeroflot.svg';
+import AirBaltic from '../assets/AirBaltic_logo.svg';
+import Belavia from '../assets/Belavia_logo.svg';
+import EasyJet from '../assets/EasyJet_logo.svg';
+
+const getLogo = (company: string) => {
+    switch(company){
+        case('AirBaltic'):
+            return AirBaltic;
+        case('Aeroflot'):
+            return Aeroflot;
+        case('BelAvia'): 
+            return Belavia;
+        case ('Wizair'):
+            return EasyJet;
+    }
+}
 
 interface FligjtsObject{
     company: string;
@@ -16,6 +33,7 @@ const FlightItem = (props: FligjtsObject) => (
     <div className="item">
         <div className="row m-3 item-style">
             <div className="col-sm-4" style={{borderRadius: '10px 0 0 10px',backgroundColor:'orange',height:'150px'}}>
+                <img src={getLogo(props.company)}  width={100} height={50} />    
                 <h5>{props.company}: {props.price}
                     {!props.isBucket &&<button onClick={()=>props.onClick()}>buy</button>}
                 </h5>

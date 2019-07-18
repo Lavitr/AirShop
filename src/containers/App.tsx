@@ -24,6 +24,9 @@ const App = (props: PropsObject) => (
                     </div>
             }
         </div>
+        <button className="float-right m-5" onClick={()=>localStorage.clear()}>
+            Reset
+        </button>
     </div>
 );
 

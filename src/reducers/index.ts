@@ -8,7 +8,7 @@ interface ActionObject {
     flights: object;
     ticket: any;
 }
-const reducer = (state: any = {currency:'RUB',transferNumberArray:[],ticket:[]}, action: ActionObject) => {
+const reducer = (state: any = {currency:'USD',transferNumberArray:[],ticket:[]}, action: ActionObject) => {
     const transfersArray=state.transferNumberArray;
     const tickerArray=state.ticket
     switch (action.type) {

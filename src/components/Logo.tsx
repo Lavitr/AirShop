@@ -1,9 +1,9 @@
 import React from 'react';
-import MyImageSvg from '../assets/patch.svg';
+import Logosvg from '../assets/AirAsia_New_Logo.svg';
 
 const Logo = () => (
     <div className="text-center m-3">
-        <img src={MyImageSvg}   width={70} height={70} />          
+        <img src={Logosvg} width={100} height={100} />          
     </div>
 );
 

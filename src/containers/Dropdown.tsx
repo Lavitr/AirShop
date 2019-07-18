@@ -15,7 +15,7 @@ const Dropdown = (props: DropdownProps) => (
         }}>
         <option value="DEFAULT" hidden>Select Destination</option>
         <option value="Minsk">Minsk</option>
-        <option value="Vitebsk">Vitebsk</option>
+        <option value="Kiev">Kiev</option>
         <option value="Moskva">Moskva</option>
         <option value="London">London</option>
     </select>
