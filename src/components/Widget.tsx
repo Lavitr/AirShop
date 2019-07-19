@@ -4,7 +4,9 @@ import CheckBoxBlock from './CheckBoxBlock';
 import Dropdown from '../containers/Dropdown';
 
 const Widget = () => (
-    <div className="col-md-3 text-center p-3" style={{backgroundColor:'azure',height:'fit-content'}}>
+    <div 
+        className="col-md-3 text-center p-3 mb-4 align-items-center justify-content-center widget"
+    >
         <Dropdown/>
         <ButtonBlock/>
         <h5 className= "pt-1 pb-1">Количество пересадок</h5>

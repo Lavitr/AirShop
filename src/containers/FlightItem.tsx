@@ -31,14 +31,23 @@ interface FligjtsObject{
 
 const FlightItem = (props: FligjtsObject) => (
     <div className="item">
-        <div className="row m-3 item-style">
-            <div className="col-sm-4" style={{borderRadius: '10px 0 0 10px',backgroundColor:'orange',height:'150px'}}>
-                <img src={getLogo(props.company)}  width={100} height={50} />    
-                <h5>{props.company}: {props.price}
-                    {!props.isBucket &&<button onClick={()=>props.onClick()}>buy</button>}
-                </h5>
+        <div className="row mt-0 mb-4 ml-3 mr-3 item-style">
+            <div className="col-sm-4 flight-item-left">
+                <div className="row align-items-center justify-content-center" style={{height:'80px'}}>
+                    <img  className="" src={getLogo(props.company)}  width={100} height={50} /> 
+                </div>
+                <div className="row align-items-center justify-content-center" style={{height:'60px'}}>
+                    {!props.isBucket ?
+                        <button  
+                            className="mb-2 btn btn-warning pl-4 pr-4" 
+                            onClick={()=>props.onClick()}
+                            style={{color:'white'}}>
+                             Купить<br/>за {props.price}
+                        </button>
+                        : <h4>{props.price}</h4>}
+                </div>
             </div>
-            <div className="col-sm-8" style={{borderRadius: '0 10px 10px 0',backgroundColor:'white',height:'150px'}}>
+            <div className="col-sm-8 flight-item-right">
                 <p>{props.transf_number} : {props.dept_date}</p>
             </div>
         </div>  

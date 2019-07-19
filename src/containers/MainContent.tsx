@@ -25,28 +25,30 @@ interface FlightObject{
 const RUB_EXCHANGE = 62.82;
 const EUR_EXCHANGE = 1.13;
 
-const MainContent = (props: PropsObject) => ( props.loading ?
-    <Loading/> :
+const MainContent = (props: PropsObject) => ( 
     (<div className="col-md-9" >
-        { props.flights &&
+        { props.loading ?
+            <Loading/> 
+            :    props.flights &&
       props.flights.map((flight: FlightObject, index: number) => {
           let price;
           switch(props.currency){
               case ("RUB"):
-                  price = `₽ ${(Number(flight.price)*RUB_EXCHANGE).toFixed(2)}`;
+                  price = `₽${(Number(flight.price)*RUB_EXCHANGE).toFixed(0)}`;
                   break;
               case("EUR"):
-                  price = `€ ${(Number(flight.price)*EUR_EXCHANGE).toFixed(2)}`
+                  price = `€${(Number(flight.price)*EUR_EXCHANGE).toFixed(0)}`
                   break;
               default:
-                  price = `$ ${flight.price}`
+                  price = `$${flight.price}`
           }
+          const ticketId = v4();
           if(props.maxTransf.includes(Number(flight.transf_number))
               || !props.maxTransf.length 
               || props.maxTransf[0] < 0 ){
               return (<
                   FlightItem
-                  key={v4()}
+                  key={ticketId}
                   isBucket={false}
                   company={flight.company}
                   price= {price}
@@ -55,7 +57,7 @@ const MainContent = (props: PropsObject) => ( props.loading ?
                   dept_time={flight.dept_time}
                   arr_date={flight.arr_date}
                   arr_time={flight.arr_time}
-                  onClick= {()=>{console.log('ff',flight);props.onClick(flight)}}
+                  onClick= {()=>{props.onClick({...flight, ticketId})}}
               />)
           }
       })

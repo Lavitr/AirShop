@@ -2,12 +2,9 @@
     box-sizing: border-box;
 }
 body{
+background-color: lightgray
+}
 
-}
-.container-style{
-    background-color: aquamarine;
-    
-}
 .item-style{
     border-radius: 10px;
     box-shadow: 10px 10px 5px  rgb(232, 235, 232);
@@ -26,7 +23,6 @@ body{
   }
   .dropdown{
     height: 32px;
-    background-color: bisque;
     border: 1px solid cornflowerblue;
   }
   .spinner{
@@ -34,4 +30,26 @@ body{
     width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
     width: fill-available;
     text-align: center;
+  }
+
+  .widget{
+    Border-radius: 10px;
+    background-color: white;
+    height:fit-content;
+    border: 1px solid rgba(172, 170, 170, 0.651);
+  }
+
+  .flight-item-left{
+    border-radius: 10px 0 0 10px;
+    background-color:white;
+    height:150px;
+    border: 1px solid rgba(172, 170, 170, 0.651);
+    border-right: none;
+  }
+
+  .flight-item-right{
+    border-radius: 0 10px 10px 0;
+    background-color:white;
+    height:150px;
+    border: 1px solid rgba(172, 170, 170, 0.651);
   }

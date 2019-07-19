@@ -12,7 +12,7 @@ interface PropsObject {
 const App = (props: PropsObject) => (
     <div>
         <Logo />
-        <div className="container container-style" >
+        <div className="container" >
             {
                 props.isBucketOpen ? 
                     <div className="row">
@@ -24,8 +24,8 @@ const App = (props: PropsObject) => (
                     </div>
             }
         </div>
-        <button className="float-right m-5" onClick={()=>localStorage.clear()}>
-            Reset
+        <button className="float-right m-5 btn btn-outline-dark" onClick={()=>localStorage.clear()}>
+            Reset filters
         </button>
     </div>
 );
