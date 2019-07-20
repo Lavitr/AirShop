@@ -11,10 +11,12 @@ git clone https://github.com/Lavitr/Jest-testing-SAGA.git
 cd AirShop
 npm install
 npm start
+```
 
 ### Available Commands
 
+```
  npm run dev
  npm run build  
-
+```
 
