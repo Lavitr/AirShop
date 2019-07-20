@@ -1,6 +1,5 @@
 # AirShop
-Stack: React, Redux, TypeScript, SASS, CSS3, HTML5, Lodash , SVG , Webpack, Bootstrap 10,
- Firebase, Redux-Saga
+Stack: React, Redux, TypeScript, Lodash , Webpack, Bootstrap 10, Firebase, Redux-Saga
 
   [Online demo](https://gifted-feynman-f6f718.netlify.com/)
 
@@ -13,7 +12,7 @@ cd AirShop
 npm install
 npm start
 
-## Available Commands
+### Available Commands
 
  npm run dev
  npm run build  
