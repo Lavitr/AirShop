@@ -9,7 +9,8 @@ export interface DropdownProps {
 const Dropdown = (props: DropdownProps) => (
     <select 
         defaultValue={'DEFAULT'}
-        className="dropdown mb-3"
+        className="mb-3 p-4"
+        style={{height:'40px'}}
         onChange={(e) => {
             props.handleDropdownChange( e.target.value )
         }}>

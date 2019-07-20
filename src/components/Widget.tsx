@@ -9,7 +9,7 @@ const Widget = () => (
     >
         <Dropdown/>
         <ButtonBlock/>
-        <h5 className= "pt-1 pb-1">Количество пересадок</h5>
+        <h5 className= "pt-1 pb-1 text-secondary text-center">Количество пересадок</h5>
         <CheckBoxBlock/>
     </div>
 );

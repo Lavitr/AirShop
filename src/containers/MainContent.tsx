@@ -11,6 +11,7 @@ interface PropsObject {
     maxTransf: number[];
     onClick: Function;
     currency: string;
+    destination: string;
 }
 interface FlightObject{     
     company: string;
@@ -49,6 +50,7 @@ const MainContent = (props: PropsObject) => (
               return (<
                   FlightItem
                   key={ticketId}
+                  destination={props.destination}
                   isBucket={false}
                   company={flight.company}
                   price= {price}
@@ -70,13 +72,15 @@ interface StateObject{
     flights: any[];
     transferNumberArray: number[];
     currency: string;
+    destination: string;
 }
 
 const mapStateToProps = (state: StateObject) => ({
     loading: state.loading,
     flights: state.flights,
     maxTransf: state.transferNumberArray,
-    currency: state.currency
+    currency: state.currency,
+    destination: state.destination
 });
 
 const mapDispatchToProps = (dispatch: Function) => ({

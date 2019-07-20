@@ -1,8 +1,21 @@
 import React from 'react';
-import Aeroflot from '../assets/Aeroflot.svg';
+import Aeroflot from '../assets/Aeroflot_Russian.svg';
 import AirBaltic from '../assets/AirBaltic_logo.svg';
 import Belavia from '../assets/Belavia_logo.svg';
 import EasyJet from '../assets/EasyJet_logo.svg';
+import Plain from '../assets/Aero-stub_img.svg';
+
+const getTransferText = (transfNumber: string) => {
+    switch(transfNumber){
+        case '0':
+            return 'пересадок'
+        case '1':
+            return 'пересадка'
+        default:
+            return 'пересадки'
+    }
+
+}
 
 const getLogo = (company: string) => {
     switch(company){
@@ -27,6 +40,7 @@ interface FligjtsObject{
     arr_time: string;
     onClick: Function;
     isBucket: boolean;
+    destination: string;
 }
 
 const FlightItem = (props: FligjtsObject) => (
@@ -44,11 +58,29 @@ const FlightItem = (props: FligjtsObject) => (
                             style={{color:'white'}}>
                              Купить<br/>за {props.price}
                         </button>
-                        : <h4>{props.price}</h4>}
+                        : <h4 className="text-secondary">{props.price}</h4>}
                 </div>
             </div>
             <div className="col-sm-8 flight-item-right">
-                <p>{props.transf_number} : {props.dept_date}</p>
+                <div className="row mt-3 mb-3 ">
+                    <div className="col-sm-4 p-0">
+                        <h3 className="text-dark text-center">{props.dept_time}</h3>
+                        <h5 className="text-dark text-center">Vitebsk</h5>
+                        <p className="text-secondary text-center">{props.dept_date}</p>
+                    </div>
+                    <div className="col-sm-4 p-0">
+                        
+                        <p className="text-secondary text-center" >
+                            {`${props.transf_number} ${getTransferText(props.transf_number)}`}
+                        </p>
+                        <img  className="rounded mx-auto d-block" src={Plain} width={40} /> 
+                    </div>
+                    <div className="col-sm-4 p-0">
+                        <h3 className="text-dark text-center">{props.arr_time}</h3>
+                        <h5 className="text-dark text-center">{props.destination}</h5>
+                        <p className="text-secondary text-center">{props.arr_date}</p>
+                    </div>
+                </div>
             </div>
         </div>  
     </div>

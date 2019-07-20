@@ -5,6 +5,7 @@ export const SET_DESTINATION = 'SET_DESTINATION';
 export const BUY_TICKET = 'BUY_TICKET';
 export const REMOVE_TICKET = 'REMOVE_TICKET';
 export const BACK_TO_MAIN_SCREEN = 'BACK_TO_MAIN_SCREEN';
+export const FLIGHTS_RECEIVED = 'FLIGHTS_RECEIVED';
 
 export const setCurrency = (currency: string) => ({
     type: SELECT_CURRENCY,

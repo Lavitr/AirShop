@@ -12,7 +12,7 @@ export interface CheckProps {
 
 const Checkbox = (props: CheckProps) =>
     (
-        <div className="form-check mt-2" >
+        <div className="d-flex justify-content-start mt-2 ml-4" >
             <input 
                 className="form-check-input" 
                 type="checkbox" 

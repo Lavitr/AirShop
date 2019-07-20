@@ -9,6 +9,7 @@ interface PropsObject {
     onClick: Function;
     onClickReturn: Function;
     currency: string;
+    destination: string;
 }
 interface FlightObject{     
     company: string;
@@ -46,6 +47,7 @@ const Bucket = (props: PropsObject) => (<div className="col-md-12 text-center" >
                 </button>
                 <FlightItem
                     isBucket
+                    destination={props.destination}
                     company={flight.company}
                     price={price}
                     transf_number={flight.transf_number}
@@ -64,16 +66,21 @@ const Bucket = (props: PropsObject) => (<div className="col-md-12 text-center" >
         className="m-1 btn btn-outline-primary btn-lg">
         back to main screen
     </button>
+    <button className="m-1 btn btn-outline-primary btn-lg disabled">
+        Continue to payment
+    </button>
 </div>)
 
 interface StateObject{ 
     ticket: object[];
     currency: string;
+    destination: string;
 }
 
 const mapStateToProps = (state: StateObject) => ({
     ticket: state.ticket,
-    currency: state.currency
+    currency: state.currency,
+    destination: state.destination
 });
 
 const mapDispatchToProps = (dispatch: Function) => ({

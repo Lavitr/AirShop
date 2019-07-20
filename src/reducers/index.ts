@@ -1,5 +1,12 @@
-import { SELECT_CURRENCY,SET_TRANSFERS_NUMBER,UNSET_TRANSFERS_NUMBER,
-    SET_DESTINATION,BUY_TICKET,REMOVE_TICKET, BACK_TO_MAIN_SCREEN } from '../actions'
+import { 
+    SELECT_CURRENCY,
+    SET_TRANSFERS_NUMBER,
+    UNSET_TRANSFERS_NUMBER,
+    SET_DESTINATION,
+    BUY_TICKET,
+    REMOVE_TICKET,
+    BACK_TO_MAIN_SCREEN,
+    FLIGHTS_RECEIVED } from '../actions'
 
 interface ActionObject {
     type: string;
@@ -14,9 +21,7 @@ const reducer = (state: any = {currency:'USD',transferNumberArray:[],ticket:[]},
     const transfersArray=state.transferNumberArray;
     const ticketArray=state.ticket
     switch (action.type) {
-        case 'GET_FLIGHTS':
-            return { ...state, loading: true };
-        case 'FLIGHTS_RECEIVED':
+        case FLIGHTS_RECEIVED:
             return { ...state, flights: action.flights, loading: false }
         case SELECT_CURRENCY:
             return { ...state, currency: action.currency };
