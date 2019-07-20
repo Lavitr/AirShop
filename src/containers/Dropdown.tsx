@@ -14,7 +14,7 @@ const Dropdown = (props: DropdownProps) => (
         onChange={(e) => {
             props.handleDropdownChange( e.target.value )
         }}>
-        <option value="DEFAULT" hidden>Select Destination</option>
+        <option value="DEFAULT" hidden>Выбрать куда</option>
         <option value="Minsk">Minsk</option>
         <option value="Kiev">Kiev</option>
         <option value="Moskva">Moskva</option>

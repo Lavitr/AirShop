@@ -6,11 +6,11 @@ import createSagaMiddleware from 'redux-saga';
 import { Provider } from 'react-redux'
 import { logger } from 'redux-logger'
 import reducer from './reducers'
-import './css/styles.css'
 import App from "./containers/App"
 import rootSaga from './sagas';
 import {saveState, loadState} from './localStorage';
 import throttle from 'lodash/throttle';
+import './css/styles.css'
 
 const sagaMiddleware = createSagaMiddleware();
 

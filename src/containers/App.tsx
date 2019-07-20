@@ -24,8 +24,13 @@ const App = (props: PropsObject) => (
                     </div>
             }
         </div>
-        <button className="float-right m-5 btn btn-outline-dark" onClick={()=>localStorage.clear()}>
-            Reset filters
+        <button 
+            className="float-right m-5 btn btn-outline-dark"
+            onClick={() => { 
+                localStorage.clear();
+                location.reload()}}
+        >
+           Press to Reset
         </button>
     </div>
 );

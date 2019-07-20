@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {setCurrency} from '../actions';
-import databaseRef from '../firebase'
 
 export interface ButtonProps {
     currency: string;
@@ -29,18 +28,6 @@ const mapDispatchToProps = (dispatch: Function, ownProps: OwnProposObject) => ({
         dispatch(setCurrency(ownProps.currencyTitle));
     }
 })
-  
-
-// const mapDispatchToProps = (dispatch: Function) => ({
-//     saySomething: () => {
-//         dispatch(sayHello());
-//         databaseRef.child("TT").on("value", function(snapshot: any) {
-//             console.log(snapshot.val());
-//         }, function (error: any) {
-//             console.log("Error: " + error.code);
-//         });
-//     },
-// });
 
 export default connect(
     mapStateToProps,

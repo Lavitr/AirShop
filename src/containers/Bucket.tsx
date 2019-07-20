@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import FlightItem from './FlightItem';
+import FlightItem from '../components/FlightItem';
 import {removeTicket, backToMainScreen} from '../actions';
 import {v4} from 'uuid'
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import FlightItem from './FlightItem';
+import FlightItem from '../components/FlightItem';
 import Loading from '../components/Loading';
 import {buyTicket} from '../actions';
 import {v4} from 'uuid'
@@ -69,7 +69,7 @@ const MainContent = (props: PropsObject) => (
 
 interface StateObject{ 
     loading: boolean;
-    flights: any[];
+    flights: FlightObject[];
     transferNumberArray: number[];
     currency: string;
     destination: string;

@@ -1,16 +1,15 @@
 /* eslint-disable @typescript-eslint/explicit-member-accessibility */
 import React from 'react';
 
-
 class ThreeButton extends React.Component{
-    constructor(props: any){
+    constructor(props: object){
         super(props);
         this.state={
             selectedButton: "RUB" 
         }
     }
 
-    render(){
+    render() {
         return (
             <div className="m-3">
                 <button>RUB</button>
