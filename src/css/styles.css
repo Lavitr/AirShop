@@ -32,6 +32,12 @@ body {
     border: 1px solid rgba(172, 170, 170, 0.651);
 }
 
+@media (max-width: 576px) {
+    .widget {
+        margin: 0 30px;
+    }
+}
+
 @media (min-width: 576px) {
     .flight-item-left {
         border-radius: 10px 0 0 10px;
